@@ -44,6 +44,7 @@
 					"ms-azuretools.vscode-docker",
 					"GitHub.copilot",
 					"GitHub.github-vscode-theme",
+					"ms-azuretools.vscode-bicep"
 				]
 		}
 	},

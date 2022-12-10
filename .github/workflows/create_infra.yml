@@ -1,0 +1,12 @@
+name: ☁️ Set up infra for website
+on:
+  workflow_dispatch: 
+
+jobs: 
+  init: 
+  runs-on: Ubuntu-latest
+
+  steps: 
+    - name: 📝 Echo
+      run: echo "init"
+

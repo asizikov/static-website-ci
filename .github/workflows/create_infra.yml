@@ -2,8 +2,14 @@ name: ☁️ Set up infra for website
 on:
   workflow_dispatch: 
 
+
+
 jobs:
   create_infra:
+    name: 🏠 Create infrastructure
+    permissions:
+      contents: 'read'
+      id-token: 'write'
     environment: production
     env:
       TF_IN_AUTOMATION: true

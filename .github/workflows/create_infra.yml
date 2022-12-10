@@ -31,5 +31,4 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: 'cloudeng-nl-site'
           template: ./infra/static_site/site.bicep
-          parameters: 'storagePrefix=mystore storageSKU=Standard_LRS'
           failOnStdErr: false

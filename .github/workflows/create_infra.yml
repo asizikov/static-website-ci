@@ -2,11 +2,18 @@ name: ☁️ Set up infra for website
 on:
   workflow_dispatch: 
 
-jobs: 
-  init: 
-  runs-on: Ubuntu-latest
-
-  steps: 
-    - name: 📝 Echo
-      run: echo "init"
+jobs:
+  create_infra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.3.6
+      - name: Terraform Init in infra folder
+        run: terraform init infra
+      - name: Terraform Plan
+        run: terraform plan infra
 

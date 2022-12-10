@@ -5,7 +5,7 @@ param staticSiteSetting object = {
 }
 
 // create a storage account for the static site
-resource staticSiteStorage 'Microsoft.Storage/storageAccounts@2019-06-01' = {
+resource staticSiteStorage 'Microsoft.Storage/storageAccounts@2021-06-01' = {
   name: staticSiteSetting.siteStorageAccountName
   location: staticSiteSetting.location
   kind: 'StorageV2'
@@ -14,5 +14,10 @@ resource staticSiteStorage 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   }
   properties: {
     accessTier: 'Hot'
+  }
+  tags: {
+    displayName: 'Cloud Engineering NL Site'
+    environment: 'production'
+    managedBy: 'GitHub Actions:bicep'
   }
 }
